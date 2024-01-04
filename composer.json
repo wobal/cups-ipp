@@ -1,6 +1,6 @@
 {
-    "name": "smalot/cups-ipp",
-    "description": "CUPS Implementation of IPP - PHP Client API",
+    "name": "wobal/cups-ipp",
+    "description": "CUPS Implementation of IPP - PHP Client API symfony 5.4",
     "type": "library",
     "license": "MIT",
     "authors": [
