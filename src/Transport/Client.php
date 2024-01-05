@@ -10,7 +10,6 @@ use Http\Client\Common\Plugin\ErrorPlugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\HttpClient;
 use Http\Client\Socket\Client as SocketHttpClient;
-use Http\Message\MessageFactory\GuzzleMessageFactory;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Smalot\Cups\CupsException;
@@ -70,8 +69,7 @@ class Client implements HttpClient
             $socketClientOptions['remote_socket'] = self::SOCKET_URL;
         }
 
-        $messageFactory = new GuzzleMessageFactory();
-        $socketClient = new SocketHttpClient($messageFactory, $socketClientOptions);
+        $socketClient = new SocketHttpClient($socketClientOptions);
         $host = preg_match(
           '/unix:\/\//',
           $socketClientOptions['remote_socket']
